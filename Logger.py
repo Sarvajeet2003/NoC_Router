@@ -12,6 +12,7 @@ class Logger:
     def generate_log_file(self, simulation_engine):
         """Generate the log file based on simulation events."""
         if not self.log_entries:
+            print("Naaa")
             return  # Nothing to log
 
         file_name = "simulation_log.txt"

@@ -1,16 +1,15 @@
-# Router.py
-
 class Router:
-    def __init__(self, router_id, delay):
+    def __init__(self, router_id, delay=0):
         self.router_id = router_id
         self.delay = delay
         self.input_buffer = []  # List to store incoming flits
-        self.crossbar = None  # Initialize to None; you can set this up in the simulation
-        self.switch_allocator = None  # Initialize to None; you can set this up in the simulation
-    
+        self.routing_algorithm = None
+        self.crossbar = None
+        self.switch_allocator = None
+
     def inject_packet(self, packet, destination_router):
         """Inject a packet into the router."""
-        # For simplicity, assume packets are injected into the local input port
+        # Assuming packets are injected into the local input port
         self.input_ports['Local'].receive_packet(packet, destination_router)
 
     def inject_flit(self, flit):
@@ -20,7 +19,11 @@ class Router:
     def set_switch_allocator(self, switch_allocator):
         """Set the switch allocator for the router."""
         self.switch_allocator = switch_allocator
-            
+
+    def receive_flit(self, flit):
+        """Simulate processing the received flit."""
+        print(f"Router {self.router_id} received flit: {flit}")
+
     def process_flits(self):
         """Process flits in the router."""
         if not self.input_buffer:
@@ -28,7 +31,7 @@ class Router:
 
         # Process header flits
         header_flit = self.input_buffer[0]
-        flit_type = header_flit[0]  # Assuming flit_type is the first element of the header flit
+        flit_type = header_flit[0]
 
         if flit_type == 0:  # Header flit
             source, destination, _ = header_flit[1], header_flit[2], header_flit[3]
