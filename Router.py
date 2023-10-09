@@ -1,12 +1,26 @@
-class Router:
-    def __init__(self, router_id, delay=0):
-        self.router_id = router_id
-        self.delay = delay
-        self.input_buffer = []  # List to store incoming flits
-        self.routing_algorithm = None
-        self.crossbar = None
-        self.switch_allocator = None
+from InputBuffer import InputBuffer
+from SwitchAllocator import SwitchAllocator
+from Crossbar import Crossbar
 
+class Router:
+    def __init__(self, router_id,buffer_delay,sa_delay,xbar_delay):
+        self.router_id = router_id
+        self.input_buffer = InputBuffer(buffer_delay)
+        self.crossbar = Crossbar(xbar_delay)
+        self.switch_allocator = SwitchAllocator(sa_delay)
+
+    def __str__(self):
+        return f"Router ID : {self.router_id} \n Input Buffer Value : {self.input_buffer.value} \n CrossBar Value : {self.crossbar.value} \n Switch Allocator Value : {self.switch_allocator.value} \n"
+
+    def update(self,nextrouter,new_flit):
+        nextrouter.input_buffer.value = self.crossbar.value
+        self.crossbar.value = self.switch_allocator.value
+        self.switch_allocator.value = self.input_buffer.value
+        self.input_buffer.value = new_flit
+
+
+
+'''
     def inject_packet(self, packet, destination_router):
         """Inject a packet into the router."""
         # Assuming packets are injected into the local input port
@@ -57,4 +71,4 @@ class Router:
 
     def set_routing_algorithm(self, routing_algorithm):
         """Set the routing algorithm for the router."""
-        self.routing_algorithm = routing_algorithm
+        self.routing_algorithm = routing_algorithm'''

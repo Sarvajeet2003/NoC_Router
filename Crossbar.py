@@ -1,12 +1,11 @@
 # Crossbar.py
 
 class Crossbar:
-    def __init__(self, num_inputs, num_outputs):
-        self.num_inputs = num_inputs
-        self.num_outputs = num_outputs
-        self.input_ports = [[] for _ in range(num_inputs)]
-        self.output_ports = [[] for _ in range(num_outputs)]
+    def __init__(self,delay):
+        self.delay = delay
+        self.value = None
 
+'''
     def connect(self, input_port, output_port):
         """Connect an input port to an output port."""
         self.input_ports[input_port].append(output_port)
@@ -24,4 +23,4 @@ class Crossbar:
 # Example usage of the Crossbar class:
 # crossbar = Crossbar(num_inputs, num_outputs)
 # crossbar.connect(input_port, output_port)
-# crossbar.route()
+# crossbar.route()'''

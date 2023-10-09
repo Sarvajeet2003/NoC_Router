@@ -1,12 +1,13 @@
 # SwitchAllocator.py
 
 class SwitchAllocator:
-    def __init__(self, input_ports, output_ports):
-        self.input_ports = input_ports
-        self.output_ports = output_ports
+    def __init__(self,delay):
+        self.delay = delay
+        self.value = None
+        self.input_port = None
+        self.output_port = None
 
     def allocate_flit(self, router_id, next_router_id, flit):
-        """Allocate a flit to the appropriate output port based on XY routing."""
         source_x, source_y = router_id % 3, router_id // 3
         dest_x, dest_y = next_router_id % 3, next_router_id // 3
 
@@ -19,5 +20,4 @@ class SwitchAllocator:
         else:
             output_port = self.output_ports['South']
 
-        # Forward the flit to the selected output port
-        output_port.receive_flit(flit)
+        
