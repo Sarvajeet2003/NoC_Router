@@ -1,21 +1,20 @@
 # Network on Chip (NoC) Simulator
-# Project Description
+
+## Project Description
 This project is a Network on Chip (NoC) simulator that models and simulates the behavior of a NoC architecture. It includes the simulation of NoC routers, packet routing algorithms, and various components of the network.
 
-# Components
-# Crossbar
-The Crossbar class represents the crossbar component in each router. It is responsible for configuring connections between input and output ports and has a delay parameter.
+## Components
 
-```python
-class Crossbar:
-    def __init__(self, delay):
-        self.delay = delay
-        self.value = None
-```
+### Router
+The Router class represents a router in the NoC. It is initialized as Follows
 
+**Router( router ID, Buffer Delay, Switch Allocator delay, Corssbar delay)**
 
-# Router
-The Router class represents a router in the NoC. It is initialized with a router ID, buffer delay, switch allocator delay, and crossbar delay. The router has input buffers, a crossbar, and a switch allocator.
+A router will have  :-
+- Router ID
+- An Input buffer 
+- A crossbar 
+- A Switch allocator.
 
 ```python
 class Router:
@@ -28,15 +27,18 @@ class Router:
     def __str__(self):
         return f"Router ID : {self.router_id} \n Input Buffer Value : {self.input_buffer.value} \n CrossBar Value : {self.crossbar.value} \n Switch Allocator Value : {self.switch_allocator.value} \n"
 
-    def update(self,nextrouter,new_flit):
+    def update(self,nextrouter,new_flit): #this is function that determines how the data will flow inside a router as well as between 2 routers
         nextrouter.input_buffer.value = self.crossbar.value
         self.crossbar.value = self.switch_allocator.value
         self.switch_allocator.value = self.input_buffer.value
         self.input_buffer.value = new_flit
 ```
 
-# Input Buffer
-The InputBuffer class represents the input buffer component of a router. It has a delay parameter.
+### Input Buffer
+* The InputBuffer class represents the input buffer component of a router. 
+* It has a **delay** parameter.
+* It also represents as a stage in our pipelining containing value in **self.value**.
+* In a clock cycle if it contain some data , it should be transferred to the **Switch Allocator of the same Router** & contain a value from **Crossbar of the Previous Router**.
 
 ```python
 class InputBuffer:
@@ -45,8 +47,11 @@ class InputBuffer:
         self.value = None
 ```
 
-# Switch Allocator
-The SwitchAllocator class represents the switch allocator component of a router. It has a delay parameter and tracks input and output ports.
+### Switch Allocator
+* The SwitchAllocator class represents the switch allocator component of a router. 
+* It has a **delay** parameter and tracks **input** and **output** ports.
+* It also represents as a stage in our pipelining containing value in **self.value**.
+* In a clock cycle if it contain some data , it should be transferred to the **Crossbar of the same Router** & contain a value from **Buffer of the same Router**.
 
 ```python
 class SwitchAllocator:
@@ -56,15 +61,29 @@ class SwitchAllocator:
         self.input_port = None
         self.output_port = None
 ```
+### Crossbar
+ * The Crossbar class represents the crossbar component in each router. 
+ * It is responsible for configuring connections between **input** and **output** ports and has a **delay** parameter.
+ * It also represents as a stage in our pipelining containing value in **self.value**.
+ * In a clock cycle if it contain some data , it should be transferred to the **Buffer of the next determined router** & contain a value from **Switch Allocator of the same Router**.
 
-# Noc (Network on Chip)
+```python
+class Crossbar:
+    def __init__(self, delay):
+        self.delay = delay
+        self.value = None
+```
+
+## Noc (Network on Chip)
 The Noc file contains the simulation logic for the NoC, including the XY routing algorithm implementation and the main simulation loop.
+
+* The lines of code implements the logic for the **XY** routing algorithm which includes a **ID of current Router** , **ID of source Router** and **ID of Destination Router**.
 
 ```python
 def xy(curr_id,src,des):
     curr = curr_id
 
-    i_curr = curr // 3
+    i_curr = curr // 3 #Packing 1D indexes into 2D indexes
     j_curr = curr % 3
 
     i_src = src // 3
@@ -74,25 +93,25 @@ def xy(curr_id,src,des):
     j_des = des % 3
     # for eg if destination is 8 then 8%3=2 and 8//3=2 hence it denotes the coordinates of the last router.
 
-    if(j_des > j_src and j_curr + 1 < 3):
+    if(j_des > j_src and j_curr + 1 < 3): #if the dest id is greater than the source id in x-direction, the packet moves right and the value of i remains unchanged
         i_next = i_curr
         j_next = j_curr + 1
-    elif(j_des > j_src and j_curr + 1 == 3):
+    elif(j_des > j_src and j_curr + 1 == 3): #if packet cannot move in X-axis anymore , we will move in Y-axis
         i_next = i_curr + 1
         j_next = j_curr
-    elif(j_des < j_src and j_curr - 1 >= 0 ):
+    elif(j_des < j_src and j_curr - 1 >= 0 ): #if the dest id is lesser than the source id in x-direction, the packet moves left and the value of i remains unchanged
         i_next = i_curr
         j_next = j_curr - 1
-    elif(j_des < j_src and j_curr - 1 < 0):
+    elif(j_des < j_src and j_curr - 1 < 0): #if packet cannot move in X-axis anymore , we will move in Y-axis
         i_next = i_curr - 1
         j_next = j_curr
 
     next_id = 3 * i_next + j_next
     return next_id
-# the above lines of code implements the logic for the XY routing algorithm which includes a current id,src and dest id. We have implemented that if the dest id is greater than the source id in x-direction, the packet moves right and the value of i remains unchanged. Similarly we have made the two cases where the dest is greater than source and vice-versa. if we wish to visualise both the cases. Firstly it is moving rightways then down and in the other case, it is moving leftways and then up.
+# Similarly we have made the two cases where the dest is greater than source and vice-versa. if we wish to visualise both the cases. Firstly it is moving rightways then down and in the other case, it is moving leftways and then up.
 
 
-with open('traffic.txt','r') as file:
+with open('traffic.txt','r') as file: # this is the basic code to read the traffic
     line = file.readlines()
     eachline = []
     for i in range(0,len(line)):
@@ -105,27 +124,24 @@ with open('traffic.txt','r') as file:
             temp.append(eachline[i][j])
         eachline2.append(temp)
 
-with open('delays.txt','r') as file1:
+with open('delays.txt','r') as file1: # this is the basic code to read the delay file.
     line1 = file1.readline()
     line1 = line1.split()
     line2 = []
     for i in range(0,len(line1)):
         line2.append(int(line1[i]))
 
-traffic_file = eachline2
-delay_file = line2
+traffic_file = eachline2 # It contain values of traffic file in an iteratable format
+delay_file = line2 # It contain Values of Delay file in an iteratable format
 
 buffer_delay = delay_file[0]
 sa_delay = delay_file[1]
 xbar_delay = delay_file[2]
 
-# this is the basic code to read the traffic and the delay file.
 
-
-
-all_routers = {i : Router(i,buffer_delay,sa_delay,xbar_delay) for i in range(0,9)}
-
-# we are storing all the routers so that whenever we need them, we can call from here.
+all_routers = {i : Router(i,buffer_delay,sa_delay,xbar_delay) for i in range(0,9)} 
+# we are storing all the routers and map them with their ID so that whenever we need them, we can call from here.
+# {Router ID : Router Object}
 
 clock = 1 #defining the clock
 
