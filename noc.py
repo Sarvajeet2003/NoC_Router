@@ -1,7 +1,12 @@
 from Router import Router
 
-def xy(curr_id,src,des):
-    curr = curr_id
+def xy(flit_details,curr):
+
+    src = int(flit_details[0])
+    des = int(flit_details[1])
+    flit = flit_details[2]
+
+    print(f"{src} + {des}")
 
     i_curr = curr // 3
     j_curr = curr % 3
@@ -24,9 +29,21 @@ def xy(curr_id,src,des):
     elif(j_des < j_src and j_curr - 1 < 0):
         i_next = i_curr - 1
         j_next = j_curr
+    else:
+        print("yoyo")
 
     next_id = 3 * i_next + j_next
     return next_id
+
+def all_empty(all_routers):
+    i = 0
+    while(i < len(all_routers)):
+        if(not all_routers[i].isempty()):
+            return False
+        
+        i += 1
+
+    return True
 
 with open('traffic.txt','r') as file:
     line = file.readlines()
@@ -61,8 +78,10 @@ all_routers = {i : Router(i,buffer_delay,sa_delay,xbar_delay) for i in range(0,9
 
 #print("Router Creation Done")
 
+period = max(buffer_delay,sa_delay,xbar_delay)
 clock = 1 #defining the clock
 
+total = 0
 for i in range(0,len(traffic_file)): #traversing traffic file
 
     clk_cycle = int(traffic_file[i][0])
@@ -70,32 +89,43 @@ for i in range(0,len(traffic_file)): #traversing traffic file
     des = int(traffic_file[i][2])
     flit = traffic_file[i][3]
 
-    #mind fucked from here
+    flit_details = [src,des,flit]
 
-    next_id = xy(i,src,des)
+    i = 8
+    while(i >= 0):
+        r = all_routers[i]
 
-    all_routers[i].update(next_id,flit)
+        if(i != src):
+            if(not r.isempty()):
+                next_r = xy(flit_details,i)
+                r.update(all_routers[next_r])
 
+        else:
+            next_r = xy(flit_details,i)
+            r.update(all_routers[next_r])
+            r.inject(flit)
 
-    flit_type = flit[-2::]
-    if(flit_type == '00'):
-        print("Header")
-    elif(flit_type == '01'):
-        print("Body")
-    elif(flit_type == '10'):
-        print("Tail")
+        print(f"At clock cycle : {clock} = {all_routers[i]}")    
+        i -= 1
 
-    
-    '''flit_transfer = False
-    while(flit_transfer != True):
-        if(flit_type == 'tail'):
-            clock += 1'''
-    
+    clock += 1
+    total += period
 
+while(not all_empty(all_routers)):
+    i = 8
+    while(i >= 0):
+        r = all_routers[i]
+        if(not r.isempty()):
+            flit_details = r.getflit()
+            next_r = xy(flit_details,i)
+            r.update(all_routers[next_r])
+        
+        print(f"At clock cycle : {clock} = {all_routers[i]}") 
+        i -= 1
 
+    clock += 1
+    total += period
 
-
-
-
-
+    # mind fucked from here
+print(f"Total Time Taken = {total} & Clock Frequency = {1/period}")
 
