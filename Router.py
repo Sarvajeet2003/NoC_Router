@@ -32,10 +32,6 @@ class Router:
 
         return s
 
-        
-
-
-        return 
 
     def inject(self,flit_details):
         self.input_buffer.value = flit_details
@@ -46,9 +42,9 @@ class Router:
         if(not self.switch_allocator.isempty()):
             return self.switch_allocator.value
         if(not self.input_buffer.isempty()):
-            return self.input_buffer.value   
+            return self.input_buffer.value
 
-    def update(self,nextrouter):
+    def update1(self,nextrouter):
         if(not self.crossbar.isempty()):
             nextrouter.input_buffer.value = self.crossbar.value
         if(not self.switch_allocator.isempty()):
@@ -58,3 +54,9 @@ class Router:
 
         self.input_buffer.value = None
 
+    def update(self,next_id,allrouter):
+        nextrouter = allrouter[next_id]
+        nextrouter.input_buffer.value = self.crossbar.value
+        self.crossbar.value = self.switch_allocator.value
+        self.switch_allocator.value = self.input_buffer.value
+        self.input_buffer.value = None

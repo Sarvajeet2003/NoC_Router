@@ -1,12 +1,12 @@
 from Router import Router
 
 def xy(flit_details,curr):
-
+    #print(flit_details,len(flit_details),type(flit_details))
     src = int(flit_details[0])
     des = int(flit_details[1])
     flit = flit_details[2]
 
-    print(f"{src} + {des}")
+    #print(f"{src} + {des}")
 
     i_curr = curr // 3
     j_curr = curr % 3
@@ -29,10 +29,8 @@ def xy(flit_details,curr):
     elif(j_des < j_src and j_curr - 1 < 0):
         i_next = i_curr - 1
         j_next = j_curr
-    else:
-        print("yoyo")
 
-    next_id = 3 * i_next + j_next
+    next_id = (3 * i_next) + j_next
     return next_id
 
 def all_empty(all_routers):
@@ -98,12 +96,12 @@ for i in range(0,len(traffic_file)): #traversing traffic file
         if(i != src):
             if(not r.isempty()):
                 next_r = xy(flit_details,i)
-                r.update(all_routers[next_r])
+                r.update(next_r,all_routers)
 
         else:
             next_r = xy(flit_details,i)
-            r.update(all_routers[next_r])
-            r.inject(flit)
+            r.update(next_r,all_routers)
+            r.inject(flit_details)
 
         print(f"At clock cycle : {clock} = {all_routers[i]}")    
         i -= 1
@@ -111,14 +109,16 @@ for i in range(0,len(traffic_file)): #traversing traffic file
     clock += 1
     total += period
 
+print("Traffic file finished")
+
 while(not all_empty(all_routers)):
     i = 8
     while(i >= 0):
         r = all_routers[i]
         if(not r.isempty()):
-            flit_details = r.getflit()
+            flit_details = r.getflit() #returns a list
             next_r = xy(flit_details,i)
-            r.update(all_routers[next_r])
+            r.update(next_r,all_routers)
         
         print(f"At clock cycle : {clock} = {all_routers[i]}") 
         i -= 1
@@ -128,4 +128,3 @@ while(not all_empty(all_routers)):
 
     # mind fucked from here
 print(f"Total Time Taken = {total} & Clock Frequency = {1/period}")
-
