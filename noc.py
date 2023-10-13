@@ -193,7 +193,8 @@ if __name__ == '__main__':
 
             if(i != src):
                 if(not r.isempty()):
-                    next_r = xy1(flit_details,i)
+                    curr_flit_details = r.getflit()
+                    next_r = xy1(curr_flit_details,i)
                     r.update(next_r,all_routers)
 
             else:
