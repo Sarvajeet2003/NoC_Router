@@ -107,7 +107,30 @@ if __name__ == '__main__':
         if(next_id not in range(0,9)):
             print(f"Out of range : {next_id} , where Current = {curr}")
         return next_id
-
+    
+    def xy1(flit_details,curr):
+        dest=int(flit_details[1])
+        curr_row=curr//3
+        dest_row=dest//3
+        curr_col=curr%3
+        dest_col=dest%3
+        next_id=0
+        if(curr_col==dest_col):
+            if(curr_row==dest_row):
+                next_id= dest
+            elif(curr_row<dest_row):
+                next_id= (curr+3)
+            else:
+                next_id= (curr-3)
+        else:
+            if(curr_col<dest_col):
+                next_id= (curr+1)
+            else:
+                next_id= curr-1
+                
+        print(f"{curr} {dest} {next_id}")
+        return next_id
+    
     def all_empty(all_routers):
         i = 0
         while(i < len(all_routers)):
@@ -118,7 +141,7 @@ if __name__ == '__main__':
 
         return True
 
-    with open('E:\\iiitd\\CA\\NoC_Router-Project_main\\traffic.txt','r') as file:
+    with open('traffic.txt','r') as file:
         line = file.readlines()
         eachline = []
         for i in range(0,len(line)):
@@ -131,7 +154,7 @@ if __name__ == '__main__':
                 temp.append(eachline[i][j])
             eachline2.append(temp)
 
-    with open('E:\\iiitd\\CA\\NoC_Router-Project_main\\delays.txt','r') as file1:
+    with open('delays.txt','r') as file1:
         line1 = file1.readline()
         line1 = line1.split()
         line2 = []
@@ -170,12 +193,12 @@ if __name__ == '__main__':
 
             if(i != src):
                 if(not r.isempty()):
-                    next_r = xy(flit_details,i)
+                    next_r = xy1(flit_details,i)
                     r.update(next_r,all_routers)
 
             else:
                 if(not r.isempty()):
-                    next_r = xy(flit_details,i)
+                    next_r = xy1(flit_details,i)
                     r.update(next_r,all_routers)
                     r.inject(flit_details)
                 else:
@@ -203,7 +226,7 @@ if __name__ == '__main__':
                     r.receive()
      
                 else:
-                    next_r = xy(flit_details,i)
+                    next_r = xy1(flit_details,i)
                     r.update(next_r,all_routers)
              
             i -= 1
