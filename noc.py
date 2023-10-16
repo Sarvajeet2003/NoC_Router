@@ -64,11 +64,6 @@ with open('output.txt', 'w') as output_file:
             if(self.router_id == int(des)):
                 return True
             return False
-        
-        def update_destination(self):
-            self.crossbar = self.switch_allocator
-            self.switch_allocator = self.input_buffer
-            self.input_buffer = None
 
     if __name__ == '__main__':
 
@@ -222,10 +217,7 @@ with open('output.txt', 'w') as output_file:
                     if(not r.isempty()):
                         flit_details = r.getflit() #returns a list
                         if(r.is_destination_flit(flit_details[1])):
-                            if(r.is_ready_to_receive(flit_details[1])):
-                                r.receive()
-                            else:
-                                r.update_destination()
+                             r.receive()
             
                         else:
                             next_r = xy1(flit_details,i)
