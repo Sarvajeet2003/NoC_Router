@@ -41,7 +41,7 @@ with open('output.txt', 'w') as output_file:
             self.input_buffer = None
 
         def is_ready_to_receive(self,des):
-            if(self.router_id == des and self.crossbar != None):
+            if(int(self.router_id) == int(des) and self.crossbar != None):
                 return True
             return False
 
@@ -53,16 +53,6 @@ with open('output.txt', 'w') as output_file:
             if(self.input_buffer != None):
                 return self.input_buffer
 
-        # def update1(self,nextrouter):
-        #     if(not self.crossbar):
-        #         nextrouter.input_buffer = self.crossbar
-        #     if(not self.switch_allocator):
-        #         self.crossbar = self.switch_allocator
-        #     if(not self.input_buffer):
-        #         self.switch_allocator = self.input_buffer
-
-        #     self.input_buffer = None
-
         def update(self,next_id,allrouter):
             nextrouter = allrouter[next_id]
             nextrouter.input_buffer = self.crossbar
@@ -70,20 +60,23 @@ with open('output.txt', 'w') as output_file:
             self.switch_allocator = self.input_buffer
             self.input_buffer = None
 
-        # def clear(self):
-        #     self.input_buffer = None
-        #     self.switch_allocator = None
-        #     self.crossbar = None
+        def is_destination_flit(self,des):
+            if(self.router_id == int(des)):
+                return True
+            return False
+        
+        def update_destination(self):
+            self.crossbar = self.switch_allocator
+            self.switch_allocator = self.input_buffer
+            self.input_buffer = None
 
     if __name__ == '__main__':
 
         def xy(flit_details,curr):
-            #print(flit_details,len(flit_details),type(flit_details))
+
             src = int(flit_details[0])
             des = int(flit_details[1])
             flit = flit_details[2]
-
-            #print(f"{src} + {des}")
 
             i_curr = curr // 3
             j_curr = curr % 3
@@ -194,6 +187,7 @@ with open('output.txt', 'w') as output_file:
             curr = ispresent(clock,traffic_file)
             if(curr != []):
                 traffic_file.remove(curr)
+
                 clk_cycle = int(curr[0])
                 src = int(curr[1])
                 des = int(curr[2])
@@ -227,8 +221,11 @@ with open('output.txt', 'w') as output_file:
                     r = all_routers[i]
                     if(not r.isempty()):
                         flit_details = r.getflit() #returns a list
-                        if(r.is_ready_to_receive(flit_details[1])):
-                            r.receive()
+                        if(r.is_destination_flit(flit_details[1])):
+                            if(r.is_ready_to_receive(flit_details[1])):
+                                r.receive()
+                            else:
+                                r.update_destination()
             
                         else:
                             next_r = xy1(flit_details,i)
@@ -244,10 +241,8 @@ with open('output.txt', 'w') as output_file:
             clock += 1
             total += period
 
-            if(clock == 16):
-                print("breaking !")
-                break
-
             # mind fucked from here
-        print(f"Total Time Taken = {total} & Clock Frequency = {1/period}")
+        print(f"Total Time Taken = {total} for {clock} cycles with Clock Frequency = {1/period}")
 sys.stdout = sys.__stdout__
+
+print("Output is stored in a file name : 'output.txt' ")
