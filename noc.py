@@ -40,11 +40,6 @@ with open('output.txt', 'w') as output_file:
             self.switch_allocator = self.input_buffer
             self.input_buffer = None
 
-        def is_ready_to_receive(self,des):
-            if(int(self.router_id) == int(des) and self.crossbar != None):
-                return True
-            return False
-
         def getflit(self): #returns flit details
             if(self.crossbar != None):
                 return self.crossbar
@@ -167,11 +162,7 @@ with open('output.txt', 'w') as output_file:
         sa_delay = delay_file[1]
         xbar_delay = delay_file[2]
 
-        #print("file reading done")
-
         all_routers = {i : Router(i) for i in range(0,9)}
-
-        #print("Router Creation Done")
 
         period = max(buffer_delay,sa_delay,xbar_delay)
         clock = 1 #defining the clock
