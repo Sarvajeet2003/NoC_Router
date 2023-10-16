@@ -135,6 +135,13 @@ with open('output.txt', 'w') as output_file:
             print(f"{curr} {dest} {next_id}")
             return next_id
         
+        def ispresent(clock,traffic_file):
+            for i in range(0,len(traffic_file)):
+                if(clock == int(traffic_file[i][0])):
+                    return traffic_file[i]
+                
+            return []
+        
         def all_empty(all_routers):
             i = 0
             while(i < len(all_routers)):
@@ -182,59 +189,52 @@ with open('output.txt', 'w') as output_file:
         clock = 1 #defining the clock
 
         total = 0
-        for i in range(0,len(traffic_file)): #traversing traffic file
 
-            clk_cycle = int(traffic_file[i][0])
-            src = int(traffic_file[i][1])
-            des = int(traffic_file[i][2])
-            flit = traffic_file[i][3]
+        while((not all_empty(all_routers)) or len(traffic_file) != 0):
+            curr = ispresent(clock,traffic_file)
+            if(curr != []):
+                traffic_file.remove(curr)
+                clk_cycle = int(curr[0])
+                src = int(curr[1])
+                des = int(curr[2])
+                flit = curr[3]
 
-            flit_details = [src,des,flit]
+                flit_details = [src,des,flit]
 
-            i = 8
-            while(i >= 0):
-                r = all_routers[i]
+                i = 8
+                while(i >= 0):
+                    r = all_routers[i]
 
-                if(i != src):
-                    if(not r.isempty()):
-                        curr_flit_details = r.getflit()
-                        next_r = xy1(curr_flit_details,i)
-                        r.update(next_r,all_routers)
+                    if(i != src):
+                        if(not r.isempty()):
+                            curr_flit_details = r.getflit()
+                            next_r = xy1(curr_flit_details,i)
+                            r.update(next_r,all_routers)
 
-                else:
-                    if(not r.isempty()):
-                        next_r = xy1(flit_details,i)
-                        r.update(next_r,all_routers)
-                        r.inject(flit_details)
                     else:
-                        r.inject(flit_details)
-    
-                i -= 1
-
-            j = 8
-            while(j >= 0):
-                print(f"At clock cycle : {clock} = {all_routers[j]}") 
-                j -= 1
-
-            clock += 1
-            total += period
-
-        print("Traffic file finished")
-
-        while(not all_empty(all_routers)):
-            i = 8
-            while(i >= 0):
-                r = all_routers[i]
-                if(not r.isempty()):
-                    flit_details = r.getflit() #returns a list
-                    if(r.is_ready_to_receive(flit_details[1])):
-                        r.receive()
+                        if(not r.isempty()):
+                            next_r = xy1(flit_details,i)
+                            r.update(next_r,all_routers)
+                            r.inject(flit_details)
+                        else:
+                            r.inject(flit_details)
         
-                    else:
-                        next_r = xy1(flit_details,i)
-                        r.update(next_r,all_routers)
-                
-                i -= 1
+                    i -= 1
+
+            else:
+                i = 8
+                while(i >= 0):
+                    r = all_routers[i]
+                    if(not r.isempty()):
+                        flit_details = r.getflit() #returns a list
+                        if(r.is_ready_to_receive(flit_details[1])):
+                            r.receive()
+            
+                        else:
+                            next_r = xy1(flit_details,i)
+                            r.update(next_r,all_routers)
+                    
+                    i -= 1
                     
             j = 8 
             while(j >= 0):
