@@ -61,40 +61,7 @@ with open('output.txt', 'w') as output_file:
             return False
 
     if __name__ == '__main__':
-
-        def xy(flit_details,curr):
-
-            src = int(flit_details[0])
-            des = int(flit_details[1])
-            flit = flit_details[2]
-
-            i_curr = curr // 3
-            j_curr = curr % 3
-
-            i_src = src // 3
-            j_src = src % 3
-
-            i_des = des // 3
-            j_des = des % 3
-
-            if(j_des > j_src and j_curr + 1 < 3):
-                i_next = i_curr
-                j_next = j_curr + 1
-            elif(j_des > j_src and j_curr + 1 == 3):
-                i_next = i_curr + 1
-                j_next = j_curr
-            elif(j_des < j_src and j_curr - 1 >= 0 ):
-                i_next = i_curr
-                j_next = j_curr - 1
-            elif(j_des < j_src and j_curr - 1 < 0):
-                i_next = i_curr - 1
-                j_next = j_curr
-            
-            next_id = (3 * i_next) + j_next
-            if(next_id not in range(0,9)):
-                print(f"Out of range : {next_id} , where Current = {curr}")
-            return next_id
-        
+      
         def xy1(flit_details,curr):
             dest=int(flit_details[1])
             curr_row=curr//3
