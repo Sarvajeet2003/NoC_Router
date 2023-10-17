@@ -1,1 +1,0 @@
-print(f"{curr} {next_id}")
