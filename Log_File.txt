@@ -1,24 +1,14 @@
-At clock cycle: 1 = Router ID : 8 
+At clock cycle: 1 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 1 = Router ID : 7 
-Input Buffer Value : None 
+At clock cycle: 1 = Router ID : 1 
+Input Buffer Value : 00000000000000100000000000010100 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 1 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 1 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 1 = Router ID : 4 
+At clock cycle: 1 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -28,42 +18,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 1 = Router ID : 2 
+At clock cycle: 1 = Router ID : 4 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 1 = Router ID : 1 
+At clock cycle: 1 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 1 = Router ID : 0 
-Input Buffer Value : 00000000000001000000000000000000 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 2 = Router ID : 8 
+At clock cycle: 1 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 7 
+At clock cycle: 1 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 6 
+At clock cycle: 1 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 5 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 2 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 4 
+At clock cycle: 2 = Router ID : 1 
+Input Buffer Value : 00000000000000000000000000000001 
+Switch Allocator Value : 00000000000000100000000000010100 
+CrossBar Value : None 
+
+At clock cycle: 2 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -73,42 +65,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 2 
+At clock cycle: 2 = Router ID : 4 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 1 
+At clock cycle: 2 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 2 = Router ID : 0 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000001000000000000000000 
-CrossBar Value : None 
-
-At clock cycle: 3 = Router ID : 8 
+At clock cycle: 2 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 7 
+At clock cycle: 2 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 6 
+At clock cycle: 2 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 5 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 3 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 4 
+At clock cycle: 3 = Router ID : 1 
+Input Buffer Value : 00000000000000000000000000000010 
+Switch Allocator Value : 00000000000000000000000000000001 
+CrossBar Value : 00000000000000100000000000010100 
+
+At clock cycle: 3 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -118,42 +112,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 2 
+At clock cycle: 3 = Router ID : 4 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 1 
+At clock cycle: 3 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 3 = Router ID : 0 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000001000000000000000000 
-
-At clock cycle: 4 = Router ID : 8 
+At clock cycle: 3 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 7 
+At clock cycle: 3 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 6 
+At clock cycle: 3 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 5 
-Input Buffer Value : 00000000000010100000000000001100 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 4 = Router ID : 0 
+Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 4 
+At clock cycle: 4 = Router ID : 1 
+Input Buffer Value : None 
+Switch Allocator Value : 00000000000000000000000000000010 
+CrossBar Value : 00000000000000000000000000000001 
+
+At clock cycle: 4 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -163,42 +159,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 2 
+At clock cycle: 4 = Router ID : 4 
+Input Buffer Value : 00000000000000100000000000010100 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 4 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 1 
-Input Buffer Value : 00000000000001000000000000000000 
+At clock cycle: 4 = Router ID : 6 
+Input Buffer Value : 00000000000011100000000000000000 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 4 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 5 = Router ID : 8 
+At clock cycle: 4 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 5 = Router ID : 7 
+At clock cycle: 4 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 5 = Router ID : 6 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 5 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 5 = Router ID : 5 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000010100000000000001100 
-CrossBar Value : None 
+At clock cycle: 5 = Router ID : 1 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : 00000000000000000000000000000010 
 
-At clock cycle: 5 = Router ID : 4 
+At clock cycle: 5 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -208,47 +206,39 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 5 = Router ID : 2 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 5 = Router ID : 1 
+At clock cycle: 5 = Router ID : 4 
 Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000001000000000000000000 
+Switch Allocator Value : 00000000000000100000000000010100 
 CrossBar Value : None 
 
-At clock cycle: 5 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 6 = Router ID : 8 
+At clock cycle: 5 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 6 = Router ID : 7 
+At clock cycle: 5 = Router ID : 6 
+Input Buffer Value : 00000000000000000000000000000001 
+Switch Allocator Value : 00000000000011100000000000000000 
+CrossBar Value : None 
+
+At clock cycle: 5 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 6 = Router ID : 6 
+At clock cycle: 5 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 6 = Router ID : 5 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000010100000000000001100 
+---------------------------------------------------------------------------------------------------------
 
-At clock cycle: 6 = Router ID : 4 
+At clock cycle: 6 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 6 = Router ID : 3 
+At clock cycle: 6 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -258,12 +248,74 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 6 = Router ID : 1 
+At clock cycle: 6 = Router ID : 3 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 6 = Router ID : 4 
 Input Buffer Value : 00000000000000000000000000000010 
 Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000001000000000000000000 
+CrossBar Value : 00000000000000100000000000010100 
 
-At clock cycle: 6 = Router ID : 0 
+At clock cycle: 6 = Router ID : 5 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 6 = Router ID : 6 
+Input Buffer Value : 00000000000000000000000000000010 
+Switch Allocator Value : 00000000000000000000000000000001 
+CrossBar Value : 00000000000011100000000000000000 
+
+At clock cycle: 6 = Router ID : 7 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 6 = Router ID : 8 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 7 = Router ID : 0 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 7 = Router ID : 1 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 7 = Router ID : 2 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 7 = Router ID : 3 
+Input Buffer Value : 00000000000011100000000000000000 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 7 = Router ID : 4 
+Input Buffer Value : None 
+Switch Allocator Value : 00000000000000000000000000000010 
+CrossBar Value : 00000000000000000000000000000001 
+
+At clock cycle: 7 = Router ID : 5 
+Input Buffer Value : 00000000000000100000000000010100 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 7 = Router ID : 6 
+Input Buffer Value : None 
+Switch Allocator Value : 00000000000000000000000000000010 
+CrossBar Value : 00000000000000000000000000000001 
+
+At clock cycle: 7 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -273,42 +325,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 7 = Router ID : 7 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 8 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 7 = Router ID : 6 
-Input Buffer Value : 00000000000011000000000000100000 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 7 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 7 = Router ID : 4 
-Input Buffer Value : 00000000000010100000000000001100 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 7 = Router ID : 3 
+At clock cycle: 8 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 7 = Router ID : 2 
-Input Buffer Value : 00000000000001000000000000000000 
+At clock cycle: 8 = Router ID : 2 
+Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 7 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
+At clock cycle: 8 = Router ID : 3 
+Input Buffer Value : 00000000000000000000000000000001 
+Switch Allocator Value : 00000000000011100000000000000000 
+CrossBar Value : None 
 
-At clock cycle: 7 = Router ID : 0 
+At clock cycle: 8 = Router ID : 4 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : 00000000000000000000000000000010 
+
+At clock cycle: 8 = Router ID : 5 
+Input Buffer Value : 00000000000000000000000000000001 
+Switch Allocator Value : 00000000000000100000000000010100 
+CrossBar Value : None 
+
+At clock cycle: 8 = Router ID : 6 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : 00000000000000000000000000000010 
+
+At clock cycle: 8 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -318,47 +372,39 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 8 = Router ID : 7 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 9 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 8 = Router ID : 6 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000011000000000000100000 
-CrossBar Value : None 
-
-At clock cycle: 8 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 8 = Router ID : 4 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000010100000000000001100 
-CrossBar Value : None 
-
-At clock cycle: 8 = Router ID : 3 
+At clock cycle: 9 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 8 = Router ID : 2 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 8 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 8 = Router ID : 0 
+At clock cycle: 9 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 9 = Router ID : 8 
+At clock cycle: 9 = Router ID : 3 
+Input Buffer Value : 00000000000000000000000000000010 
+Switch Allocator Value : 00000000000000000000000000000001 
+CrossBar Value : 00000000000011100000000000000000 
+
+At clock cycle: 9 = Router ID : 4 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 9 = Router ID : 5 
+Input Buffer Value : 00000000000000000000000000000010 
+Switch Allocator Value : 00000000000000000000000000000001 
+CrossBar Value : 00000000000000100000000000010100 
+
+At clock cycle: 9 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -368,37 +414,49 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 9 = Router ID : 6 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000011000000000000100000 
-
-At clock cycle: 9 = Router ID : 5 
+At clock cycle: 9 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 9 = Router ID : 4 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000010100000000000001100 
+---------------------------------------------------------------------------------------------------------
 
-At clock cycle: 9 = Router ID : 3 
+At clock cycle: 10 = Router ID : 0 
+Input Buffer Value : 00000000000011100000000000000000 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 10 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 9 = Router ID : 2 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 9 = Router ID : 1 
+At clock cycle: 10 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 9 = Router ID : 0 
+At clock cycle: 10 = Router ID : 3 
+Input Buffer Value : None 
+Switch Allocator Value : 00000000000000000000000000000010 
+CrossBar Value : 00000000000000000000000000000001 
+
+At clock cycle: 10 = Router ID : 4 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 10 = Router ID : 5 
+Input Buffer Value : None 
+Switch Allocator Value : 00000000000000000000000000000010 
+CrossBar Value : 00000000000000000000000000000001 
+
+At clock cycle: 10 = Router ID : 6 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 10 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -408,42 +466,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 10 = Router ID : 7 
-Input Buffer Value : 00000000000011000000000000100000 
-Switch Allocator Value : None 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 11 = Router ID : 0 
+Input Buffer Value : 00000000000000000000000000000001 
+Switch Allocator Value : 00000000000011100000000000000000 
 CrossBar Value : None 
 
-At clock cycle: 10 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 10 = Router ID : 5 
+At clock cycle: 11 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 10 = Router ID : 4 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 10 = Router ID : 3 
-Input Buffer Value : 00000000000010100000000000001100 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 10 = Router ID : 2 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : None 
-
-At clock cycle: 10 = Router ID : 1 
+At clock cycle: 11 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 10 = Router ID : 0 
+At clock cycle: 11 = Router ID : 3 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : 00000000000000000000000000000010 
+
+At clock cycle: 11 = Router ID : 4 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 11 = Router ID : 5 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : 00000000000000000000000000000010 
+
+At clock cycle: 11 = Router ID : 6 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 11 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -453,62 +513,24 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 11 = Router ID : 7 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000011000000000000100000 
-CrossBar Value : None 
+---------------------------------------------------------------------------------------------------------
 
-At clock cycle: 11 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 11 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 11 = Router ID : 4 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 11 = Router ID : 3 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000010100000000000001100 
-CrossBar Value : None 
-
-At clock cycle: 11 = Router ID : 2 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 11 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 11 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 12 = Router ID : 8 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 12 = Router ID : 7 
+At clock cycle: 12 = Router ID : 0 
 Input Buffer Value : 00000000000000000000000000000010 
 Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000011000000000000100000 
+CrossBar Value : 00000000000011100000000000000000 
 
-At clock cycle: 12 = Router ID : 6 
+At clock cycle: 12 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 12 = Router ID : 5 
+At clock cycle: 12 = Router ID : 2 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 12 = Router ID : 3 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -518,42 +540,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 12 = Router ID : 3 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000010100000000000001100 
-
-At clock cycle: 12 = Router ID : 2 
+At clock cycle: 12 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 12 = Router ID : 1 
+At clock cycle: 12 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 12 = Router ID : 0 
+At clock cycle: 12 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 8 
-Input Buffer Value : 00000000000011000000000000100000 
+At clock cycle: 12 = Router ID : 8 
+Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 7 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 13 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : 00000000000000000000000000000010 
 CrossBar Value : 00000000000000000000000000000001 
 
-At clock cycle: 13 = Router ID : 6 
+At clock cycle: 13 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 5 
+At clock cycle: 13 = Router ID : 2 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 13 = Router ID : 3 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -563,42 +587,44 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 3 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 13 = Router ID : 2 
+At clock cycle: 13 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 1 
+At clock cycle: 13 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 13 = Router ID : 0 
+At clock cycle: 13 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 8 
-Input Buffer Value : 00000000000000000000000000000001 
-Switch Allocator Value : 00000000000011000000000000100000 
+At clock cycle: 13 = Router ID : 8 
+Input Buffer Value : None 
+Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 7 
+---------------------------------------------------------------------------------------------------------
+
+At clock cycle: 14 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : 00000000000000000000000000000010 
 
-At clock cycle: 14 = Router ID : 6 
+At clock cycle: 14 = Router ID : 1 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 5 
+At clock cycle: 14 = Router ID : 2 
+Input Buffer Value : None 
+Switch Allocator Value : None 
+CrossBar Value : None 
+
+At clock cycle: 14 = Router ID : 3 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -608,57 +634,29 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 3 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 14 = Router ID : 2 
+At clock cycle: 14 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 1 
+At clock cycle: 14 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 14 = Router ID : 0 
+At clock cycle: 14 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 15 = Router ID : 8 
-Input Buffer Value : 00000000000000000000000000000010 
-Switch Allocator Value : 00000000000000000000000000000001 
-CrossBar Value : 00000000000011000000000000100000 
-
-At clock cycle: 15 = Router ID : 7 
+At clock cycle: 14 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 15 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
+---------------------------------------------------------------------------------------------------------
 
-At clock cycle: 15 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 15 = Router ID : 4 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 15 = Router ID : 3 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 15 = Router ID : 2 
+At clock cycle: 15 = Router ID : 0 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
@@ -668,142 +666,40 @@ Input Buffer Value : None
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 15 = Router ID : 0 
+At clock cycle: 15 = Router ID : 2 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 8 
-Input Buffer Value : None 
-Switch Allocator Value : 00000000000000000000000000000010 
-CrossBar Value : 00000000000000000000000000000001 
-
-At clock cycle: 16 = Router ID : 7 
+At clock cycle: 15 = Router ID : 3 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 6 
+At clock cycle: 15 = Router ID : 4 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 5 
+At clock cycle: 15 = Router ID : 5 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 4 
+At clock cycle: 15 = Router ID : 6 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 3 
+At clock cycle: 15 = Router ID : 7 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 2 
+At clock cycle: 15 = Router ID : 8 
 Input Buffer Value : None 
 Switch Allocator Value : None 
 CrossBar Value : None 
 
-At clock cycle: 16 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
+---------------------------------------------------------------------------------------------------------
 
-At clock cycle: 16 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 8 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : 00000000000000000000000000000010 
-
-At clock cycle: 17 = Router ID : 7 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 4 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 3 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 2 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 17 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 8 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 7 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 6 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 5 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 4 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 3 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 2 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 1 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 
-
-At clock cycle: 18 = Router ID : 0 
-Input Buffer Value : None 
-Switch Allocator Value : None 
-CrossBar Value : None 

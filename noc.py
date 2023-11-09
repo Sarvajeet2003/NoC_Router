@@ -1,3 +1,4 @@
+#import txt_Converter as conv
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 import sys
@@ -31,7 +32,6 @@ try:
                     s += f"CrossBar Value : {self.crossbar[2]} \n"
                 if(self.crossbar == None):
                     s += f"CrossBar Value : None \n"
-
                 return s
 
             def inject(self,flit_details):
@@ -68,7 +68,6 @@ try:
                 return False
 
         if __name__ == '__main__':
-        
             def xy1(flit_details,curr):
                 dest=int(flit_details[1])
                 curr_row=curr//3
@@ -116,14 +115,13 @@ try:
 
                 return next_id
             
-            def total_cycles_taken(all_routers,flit_details):
+            def total_cycles_taken(all_routers,flit_details,algo):
                 curr_router = all_routers[int(flit_details[0])]
                 des_router = all_routers[int(flit_details[1])]
                 cnt = 3
                 while(curr_router != des_router):
                     curr = int(curr_router.router_id)
-                    # next_id = int(yx1(flit_details,curr))
-                    next_id = int(yx1(flit_details,curr))
+                    next_id = int(xy1(flit_details,curr)) if (algo == 0) else int(yx1(flit_details,curr))
                     curr_router = all_routers[next_id]
                     cnt += 3
                 return cnt
@@ -151,11 +149,18 @@ try:
                     return False
                 
                 return all(bit in '01' for bit in flit)
+            
+            def bubble_sort(lst,n):
+                for i in range(n):
+                    for j in range(n-i-1):
+                        if int(lst[j][0]) > int(lst[j+1][0]):
+                            lst[j], lst[j+1] = lst[j+1], lst[j]
 
+            def check_last_two_digits(temp1, temp2):
+                return temp1[3][-2:] == temp2[3][-2:]
             try:
-                def check_last_two_digits(temp1, temp2):
-                    return temp1[3][-2:] == temp2[3][-2:]
                 flagSarva = 0
+                #conv.run()
                 with open('traffic.txt', 'r') as file:
                     lines = file.readlines()
                     eachline2 = []
@@ -232,9 +237,11 @@ try:
             period = max(buffer_delay,sa_delay,xbar_delay)
             clock = 1 #defining the clock
 
+            algo = 1 # 0 for xy | 1 for yx
+
             total = 0
             flit_time = []
-
+            bubble_sort(traffic_file,len(traffic_file))
             while((not all_empty(all_routers)) or len(traffic_file) != 0):
                 curr = ispresent(clock,traffic_file)
 
@@ -258,8 +265,7 @@ try:
                                 if(curr_flit_details[0]>curr_flit_details[1]):
                                     i-=1
                                     continue
-                                # next_r = yx1(curr_flit_details,i)
-                                next_r = yx1(curr_flit_details,i)
+                                next_r = xy1(curr_flit_details,i) if (algo == 0) else yx1(curr_flit_details,i)
                                 r.update(next_r,all_routers)
 
                         else:
@@ -267,18 +273,17 @@ try:
                                 if(src>des):
                                     i-=1
                                     continue
-                                # next_r = yx1(flit_details,i)
-                                next_r = yx1(flit_details,i)
+                                next_r = xy1(flit_details,i) if (algo == 0) else yx1(flit_details,i)
                                 r.update(next_r,all_routers)
                                 r.inject(flit_details)
-                                flit_time.append(total_cycles_taken(all_routers,flit_details))
+                                flit_time.append(total_cycles_taken(all_routers,flit_details,algo))
 
                             else:
                                 if(src>des):
                                     i-=1
                                     continue
                                 r.inject(flit_details)
-                                flit_time.append(total_cycles_taken(all_routers,flit_details))
+                                flit_time.append(total_cycles_taken(all_routers,flit_details,algo))
             
                         i -= 1
                     i=0
@@ -291,7 +296,7 @@ try:
                                 if(curr_flit_details[0]<=curr_flit_details[1]):
                                     i+=1
                                     continue
-                                next_r = yx1(curr_flit_details,i)
+                                next_r = xy1(curr_flit_details,i) if (algo == 0) else yx1(curr_flit_details,i)
                                 r.update(next_r,all_routers)
 
                         else:
@@ -299,16 +304,16 @@ try:
                                 if(src<=des):
                                     i+=1
                                     continue
-                                next_r = yx1(flit_details,i)
+                                next_r = xy1(flit_details,i) if (algo == 0) else yx1(flit_details,i)
                                 r.update(next_r,all_routers)
                                 r.inject(flit_details)
-                                flit_time.append(total_cycles_taken(all_routers,flit_details))
+                                flit_time.append(total_cycles_taken(all_routers,flit_details,algo))
                             else:
                                 if(src<=des):
                                     i+=1
                                     continue
                                 r.inject(flit_details)
-                                flit_time.append(total_cycles_taken(all_routers,flit_details))
+                                flit_time.append(total_cycles_taken(all_routers,flit_details,algo))
             
                         i += 1
                     
@@ -326,7 +331,7 @@ try:
                                 r.receive()
                 
                             else:
-                                next_r = yx1(flit_details,i)
+                                next_r = xy1(flit_details,i) if (algo == 0) else yx1(flit_details,i)
                                 r.update(next_r,all_routers)
                                     
                         i -= 1
@@ -344,18 +349,20 @@ try:
                                 r.receive()
                 
                             else:
-                                next_r = yx1(flit_details,i)
+                                next_r = xy1(flit_details,i) if (algo == 0) else yx1(flit_details,i)
                                 r.update(next_r,all_routers)
                                 
                         i += 1
                         
-                j = 8 
-                while j >= 0:
+                j = 0 
+                while j <= 8:
                     try:
                         print(f"At clock cycle: {clock} = {all_routers[j]}")
                     except Exception as e:
                         print(f"Error printing router details: {str(e)}")
-                    j -= 1
+                    j += 1
+
+                print("---------------------------------------------------------------------------------------------------------\n")
 
                 clock += 1
                 total += period
